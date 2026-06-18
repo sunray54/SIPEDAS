@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SIPEDAS</string>
+    <string name="diagnosis_history">Riwayat Diagnosis</string>
+    <string name="take_photo">Ambil Foto</string>
+    <string name="choose_gallery">Pilih dari Galeri</string>
+    <string name="no_diagnosis_yet">Belum ada riwayat diagnosis</string>
+    <string name="confidence">Keyakinan</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+</resources>

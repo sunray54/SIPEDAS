@@ -1,0 +1,96 @@
+{
+  "disease_rules": [
+    {
+      "disease": "Antraknosa",
+      "cnn_confidence_min": 0.6,
+      "required_facts": [
+        {"id": "bercak_coklat_hitam", "cf_boost": 0.2},
+        {"id": "lingkaran_konsentris", "cf_boost": 0.2}
+      ],
+      "optional_facts": [
+        {"id": "buah_busuk_kering", "cf_boost": 0.1},
+        {"id": "cuaca_lembab", "cf_boost": 0.1}
+      ],
+      "recommendation": "Semprot fungisida berbahan aktif mankozeb atau propineb. Kurangi kelembaban dengan pemangkasan daun bawah. Buang buah yang terinfeksi.",
+      "cf_rule": 0.9
+    },
+    {
+      "disease": "Bercak Daun",
+      "cnn_confidence_min": 0.6,
+      "required_facts": [
+        {"id": "bercak_kecil", "cf_boost": 0.2},
+        {"id": "tepi_kuning", "cf_boost": 0.2}
+      ],
+      "optional_facts": [
+        {"id": "bercak_lubang", "cf_boost": 0.1},
+        {"id": "tanah_tergenang", "cf_boost": 0.1}
+      ],
+      "recommendation": "Semprot fungisida klorotalonil atau difenokonazol. Perbaiki drainase lahan. Jaga jarak tanam agar sirkulasi udara baik.",
+      "cf_rule": 0.85
+    },
+    {
+      "disease": "Keriting Kuning",
+      "cnn_confidence_min": 0.6,
+      "required_facts": [
+        {"id": "daun_mengeriting", "cf_boost": 0.2},
+        {"id": "warna_kuning_cerah", "cf_boost": 0.2}
+      ],
+      "optional_facts": [
+        {"id": "tanaman_kerdil", "cf_boost": 0.1},
+        {"id": "kutu_kebul", "cf_boost": 0.1}
+      ],
+      "recommendation": "Cabut dan musnahkan tanaman terinfeksi. Kendalikan kutu kebul dengan insektisida imidakloprid. Gunakan mulsa plastik perak untuk mengusir serangga.",
+      "cf_rule": 0.9
+    },
+    {
+      "disease": "Layu Fusarium",
+      "cnn_confidence_min": 0.6,
+      "required_facts": [
+        {"id": "layu_mendadak", "cf_boost": 0.2},
+        {"id": "tulang_kuning", "cf_boost": 0.2}
+      ],
+      "optional_facts": [
+        {"id": "batang_busuk", "cf_boost": 0.1},
+        {"id": "cuaca_panas", "cf_boost": 0.1}
+      ],
+      "recommendation": "Cabut dan bakar tanaman sakit. Jangan tanam cabai di lahan yang sama minimal 2–3 tahun. Gunakan varietas tahan dan aplikasikan agens hayati Trichoderma.",
+      "cf_rule": 0.92
+    },
+    {
+      "disease": "Busuk Buah",
+      "cnn_confidence_min": 0.6,
+      "required_facts": [
+        {"id": "bercak_basah", "cf_boost": 0.2},
+        {"id": "buah_membusuk", "cf_boost": 0.2}
+      ],
+      "optional_facts": [
+        {"id": "hujan_deras", "cf_boost": 0.1},
+        {"id": "miselium_putih", "cf_boost": 0.1}
+      ],
+      "recommendation": "Semprot fungisida berbahan dasar tembaga atau simoksanil. Hindari penyiraman dari atas. Petik dan musnahkan buah yang terserang.",
+      "cf_rule": 0.88
+    }
+  ],
+  "questions_mapping": {
+    "bercak_coklat_hitam": "Apakah terdapat bercak coklat gelap hingga hitam pada daun atau buah?",
+    "lingkaran_konsentris": "Apakah pada bercak terdapat pola melingkar seperti cincin (konsentris)?",
+    "buah_busuk_kering": "Apakah buah mengering dan keriput?",
+    "bercak_kecil": "Apakah terdapat bercak daun kecil dengan ukuran 1-3 mm?",
+    "tepi_kuning": "Apakah tepi bercak tersebut berwarna kuning atau klorosis?",
+    "bercak_lubang": "Apakah bercak mengering hingga menjadi lubang?",
+    "tanah_tergenang": "Apakah kondisi lahan saat ini sering tergenang air?",
+    "daun_mengeriting": "Apakah daun muda terlihat mengeriting atau melengkung ke atas?",
+    "warna_kuning_cerah": "Apakah daun berubah menjadi kuning cerah atau berpola mosaik?",
+    "tanaman_kerdil": "Apakah pertumbuhan tanaman terhambat atau terlihat kerdil?",
+    "kutu_kebul": "Apakah Anda melihat kutu putih kecil (kutu kebul) di balik daun?",
+    "layu_mendadak": "Apakah tanaman layu secara tiba-tiba, terutama pada siang hari?",
+    "tulang_kuning": "Apakah tulang daun menguning, dimulai dari daun bagian bawah?",
+    "batang_busuk": "Apakah bagian pangkal batang terlihat membusuk atau berwarna coklat?",
+    "cuaca_panas": "Apakah cuaca saat ini cenderung sangat panas?",
+    "bercak_basah": "Apakah terdapat bercak basah berair pada buah?",
+    "buah_membusuk": "Apakah buah melunak, berwarna hitam, dan membusuk cepat?",
+    "hujan_deras": "Apakah sering terjadi hujan lebat akhir-akhir ini?",
+    "miselium_putih": "Apakah muncul serabut putih atau abu-abu (miselium) pada buah yang membusuk?",
+    "cuaca_lembab": "Apakah cuaca sering mendung dan lembab?"
+  }
+}

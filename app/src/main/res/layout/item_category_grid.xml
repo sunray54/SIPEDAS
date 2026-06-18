@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  DESAIN UI/UX:
+  - Bentuk kartu dengan elevasi ringan (2dp) dan sudut melengkung 12dp.
+  - Ikon di atas, teks di bawah. Ikon menggunakan warna primary untuk konsistensi.
+  - Latar putih bersih, dengan sentuhan aksen hijau saat ditekan.
+  - Ukuran tetap 96dp x 96dp agar responsif di berbagai layar.
+  - Teks label 12sp, maksimal 2 baris untuk mencegah overflow.
+  - Diintegrasikan dengan ConstraintLayout agar fleksibel.
+-->
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="@android:color/white"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:layout_constraintDimensionRatio="1:1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="12dp">
+
+        <!-- Ikon kategori, diambil dari drawable resource -->
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="ic_default"
+            android:contentDescription="Ikon Kategori"
+            app:tint="@color/primary" />
+
+        <!-- Label kategori -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Kategori"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

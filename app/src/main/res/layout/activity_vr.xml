@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  DESAIN UI/UX - VIRTUAL REALITY TANAMAN:
+  - Area utama untuk tampilan 3D menggunakan SceneView (atau WebView).
+  - Bilah atas berisi judul dan tombol kembali.
+  - Panel kontrol untuk mengganti model (sehat vs sakit), rotasi, zoom.
+  - Kartu informasi penyakit yang muncul saat model sakit dipilih.
+  - Palet warna hijau dan biru muda untuk kesan teknologi pertanian modern.
+-->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A1929">
+
+    <!-- AppBar dengan Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        android:background="#0A1929">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Virtual Reality Tanaman"
+            app:titleTextColor="@android:color/white"
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@android:color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Tempat 3D Viewer (menggunakan io.github.sceneview.SceneView) -->
+    <FrameLayout
+        android:id="@+id/vrContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="#0A1929">
+
+        <!-- Placeholder sementara; nanti diganti dengan SceneView secara programatis -->
+        <TextView
+            android:id="@+id/tvPlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Muat model 3D..."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <!-- Panel Kontrol Bawah -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent"
+        android:padding="12dp"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHealthy"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Sehat"
+            android:textColor="@android:color/white"
+            android:strokeColor="@android:color/white"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSick"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Sakit"
+            android:textColor="@android:color/white"
+            android:strokeColor="@android:color/white"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReset"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:textColor="#FFC107" />
+    </LinearLayout>
+
+    <!-- Floating Card Informasi (muncul saat model sakit) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="16dp"
+        android:backgroundTint="#E8F5E9"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detail Penyakit"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/primary" />
+
+            <TextView
+                android:id="@+id/tvVRDisease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penyakit: ..."
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvVRSolution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solusi: ..."
+                android:textSize="14sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
